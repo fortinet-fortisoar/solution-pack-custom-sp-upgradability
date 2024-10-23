@@ -1,0 +1,37 @@
+{
+    "name": "customSolutionPackUpgradability",
+    "version": "1.0.0",
+    "fsrMinCompatibility": "7.2.0",
+    "type": "solutionpack",
+    "local": true,
+    "label": "Custom Solution Pack Upgradability",
+    "dependencies": [],
+    "prerequisite": null,
+    "publisher": "Community",
+    "description": "",
+    "help": null,
+    "category": [],
+    "supportInfo": null,
+    "iconLarge": null,
+    "postInstallConfig": null,
+    "date": "2024-10-23T08:50:45+00:00",
+    "contents": {
+        "playbooks": [
+            {
+                "name": "SP Playbooks"
+            }
+        ],
+        "connectors": [
+            {
+                "name": "Exchange",
+                "apiName": "exchange"
+            }
+        ],
+        "widgets": [
+            {
+                "apiName": "setupGuide",
+                "name": "Setup Guide"
+            }
+        ]
+    }
+}
