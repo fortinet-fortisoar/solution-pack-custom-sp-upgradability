@@ -1,0 +1,98 @@
+{
+    "@context": "\/api\/3\/contexts\/Workflow",
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Playbook Utility Operation",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/94fd92ba-00ff-4cbe-b67a-8a6e6993fd69",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/ff548d4d-b308-4d18-923b-1fdc276402d7",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "b64d71d0-75e6-443c-98e9-7060d25968b5",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "ff548d4d-b308-4d18-923b-1fdc276402d7"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Utility",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "contents": "Dummy File Content",
+                    "filename": "Dummy",
+                    "mimetype": "text\/plain"
+                },
+                "version": "3.5.0",
+                "connector": "cyops_utilities",
+                "operation": "create_file_from_string",
+                "operationTitle": "File: Create File from String",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "177",
+            "left": "487",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
+            "uuid": "31b6af3f-25e5-4fdd-9742-2eaeebbe1606"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Utility",
+            "targetStep": "\/api\/3\/workflow_steps\/31b6af3f-25e5-4fdd-9742-2eaeebbe1606",
+            "sourceStep": "\/api\/3\/workflow_steps\/ff548d4d-b308-4d18-923b-1fdc276402d7",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "4259843d-9962-45f7-adbe-b5bc966373d2"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "b5ed665e-3015-45a1-b783-f1b922ae5a4e",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}
