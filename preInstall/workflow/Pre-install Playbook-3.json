@@ -1,0 +1,105 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Pre-install Playbook-3",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/7170bb06-888f-4bf4-a1e2-6168b99180b7",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/d4f425b9-5a24-49c8-84f8-1f738e7abcfc",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Incident Record",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Incident Record:Preinstall 3-{{arrow.utcnow().int_timestamp}}",
+                    "phase": "\/api\/3\/picklists\/bb740542-f699-11e7-8c3f-9a214cf093ae",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "resSla": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "status": "\/api\/3\/picklists\/bb73fe9e-f699-11e7-8c3f-9a214cf093ae",
+                    "category": "\/api\/3\/picklists\/703218fc-f69a-11e7-8c3f-9a214cf093ae",
+                    "slaState": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "__replace": "",
+                    "escalated": "\/api\/3\/picklists\/711303d3-75ea-437d-a871-0a8d14fcdb7d",
+                    "slaPercentage": 0
+                },
+                "_showJson": false,
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/incidents",
+                "__recommend": [],
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "175",
+            "left": "501",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "6c35a909-2834-4fa9-9dc1-5f4e39d82ffa"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "21389f9e-5274-4f4b-98ce-c1d95e35003d",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "d4f425b9-5a24-49c8-84f8-1f738e7abcfc"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Create Incident Record",
+            "targetStep": "\/api\/3\/workflow_steps\/6c35a909-2834-4fa9-9dc1-5f4e39d82ffa",
+            "sourceStep": "\/api\/3\/workflow_steps\/d4f425b9-5a24-49c8-84f8-1f738e7abcfc",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "faf2ff14-b195-4c1b-81bf-c5eeedd10f03"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "61d20ef5-51b1-4282-9f20-421083a801ae",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

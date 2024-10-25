@@ -1,0 +1,55 @@
+{
+    "name": "customSolutionPackUpgradability",
+    "version": "2.0.0",
+    "fsrMinCompatibility": "7.2.0",
+    "type": "solutionpack",
+    "local": true,
+    "label": "Custom Solution Pack Upgradability",
+    "dependencies": [],
+    "prerequisite": null,
+    "publisher": "Community",
+    "description": "",
+    "help": null,
+    "category": [],
+    "supportInfo": null,
+    "iconLarge": null,
+    "postInstallConfig": null,
+    "date": "2024-10-23T08:50:45+00:00",
+    "contents": {
+	"views": {
+            "navigation": [
+                "Dashboard",
+                "Queue & Shift Management",
+                "Incident Response",
+                "Automation",
+                "Resources",
+                "Reports",
+                "Widget Library",
+                "Content Hub",
+                "Help",
+                "User Community",
+                "Credit Card Module",
+                "Debit Card Module",
+                "Company Modules"
+            ]
+        },
+	
+        "playbooks": [
+            {
+                "name": "SP Playbooks"
+            }
+        ],
+        "connectors": [
+            {
+                "name": "Exchange",
+                "apiName": "exchange"
+            }
+        ],
+        "widgets": [
+            {
+                "apiName": "setupGuide",
+                "name": "Setup Guide"
+            }
+        ]
+    }
+}

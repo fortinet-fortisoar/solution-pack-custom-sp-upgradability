@@ -1,0 +1,106 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Post-install Playbook-1",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/c9c39cde-f7b6-4b5a-b040-77b6a695894a",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/382edec4-8892-46b3-9c06-1b19619ca89b",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Alert Record",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Post-install Playbook-1:{{arrow.utcnow().format(\"YYYY-MM-DD HH:mm:ss ZZ\")}}",
+                    "type": "\/api\/3\/picklists\/574a6ee2-7265-4701-815e-cff83b053bce",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
+                    "__replace": "",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
+                    "alertRemainingAckSLA": 0
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/alerts",
+                "__recommend": [],
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "120",
+            "left": "559",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "e75b95e4-25ec-4ac0-bab3-f1b99b9b39b4"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "a464ded0-bc61-4695-ad1e-3053edbf3231",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "382edec4-8892-46b3-9c06-1b19619ca89b"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Create Alert Record",
+            "targetStep": "\/api\/3\/workflow_steps\/e75b95e4-25ec-4ac0-bab3-f1b99b9b39b4",
+            "sourceStep": "\/api\/3\/workflow_steps\/382edec4-8892-46b3-9c06-1b19619ca89b",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "c4acf0c5-2bb1-446a-8316-adae969f770f"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "a54e5ccf-3e89-441b-ac3b-5640477acf8f",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

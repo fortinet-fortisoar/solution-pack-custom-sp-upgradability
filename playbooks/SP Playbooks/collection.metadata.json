@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "SP Playbooks",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "94fd92ba-00ff-4cbe-b67a-8a6e6993fd69",
+    "deletedAt": null,
+    "recordTags": []
+}

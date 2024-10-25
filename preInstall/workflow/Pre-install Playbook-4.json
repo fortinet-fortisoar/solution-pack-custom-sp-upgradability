@@ -1,0 +1,106 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Pre-install Playbook-4",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/7170bb06-888f-4bf4-a1e2-6168b99180b7",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/00fb7559-37b0-4abf-aab2-c7f31026ee44",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Alert Record",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Create Alert Record: Preinstall 4-{{arrow.utcnow().int_timestamp}}",
+                    "type": "\/api\/3\/picklists\/574a6ee2-7265-4701-815e-cff83b053bce",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
+                    "__replace": "",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
+                    "alertRemainingAckSLA": 0
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/alerts",
+                "__recommend": [],
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "121",
+            "left": "448",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "57d3ee10-0c10-4aa8-9d3c-f5b77cab15a1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "9b2c65f9-54cd-4c17-ba55-fe53aca40f12",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "00fb7559-37b0-4abf-aab2-c7f31026ee44"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Create Alert Record",
+            "targetStep": "\/api\/3\/workflow_steps\/57d3ee10-0c10-4aa8-9d3c-f5b77cab15a1",
+            "sourceStep": "\/api\/3\/workflow_steps\/00fb7559-37b0-4abf-aab2-c7f31026ee44",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "3b9a6ac3-628b-4212-942a-1cdb5d337367"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "ac510cf5-487a-4cde-bea3-d665a009b04b",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

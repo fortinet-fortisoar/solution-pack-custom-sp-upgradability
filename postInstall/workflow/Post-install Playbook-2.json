@@ -1,0 +1,98 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Post-install Playbook-2",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/c9c39cde-f7b6-4b5a-b040-77b6a695894a",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/280dd812-bd8c-4c83-936f-1558115679d2",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Task Record",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Post-install Playbook-1:{{arrow.utcnow().int_timestamp}}",
+                    "__replace": ""
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/tasks",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "138",
+            "left": "442",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "ed36cbf9-b2c6-4fc9-8cb5-e3475f4e7e82"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "d208d2e3-f8a0-4d4d-ab0a-ac98188c2ad9",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "280dd812-bd8c-4c83-936f-1558115679d2"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Create Task Record",
+            "targetStep": "\/api\/3\/workflow_steps\/ed36cbf9-b2c6-4fc9-8cb5-e3475f4e7e82",
+            "sourceStep": "\/api\/3\/workflow_steps\/280dd812-bd8c-4c83-936f-1558115679d2",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "fb4c2215-41e2-4157-a4f1-a590972a6c8c"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "b31ae57f-0815-45bc-a846-ede9003a760c",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

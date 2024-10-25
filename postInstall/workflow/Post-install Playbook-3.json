@@ -1,0 +1,104 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Post-install Playbook-3",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/c9c39cde-f7b6-4b5a-b040-77b6a695894a",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/45512061-18f5-4961-ac61-27b6acd5ac01",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Incident Record",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Post-install Playbook-3{{arrow.utcnow().int_timestamp}}",
+                    "phase": "\/api\/3\/picklists\/bb740542-f699-11e7-8c3f-9a214cf093ae",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "resSla": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "status": "\/api\/3\/picklists\/bb73fe9e-f699-11e7-8c3f-9a214cf093ae",
+                    "category": "\/api\/3\/picklists\/703218fc-f69a-11e7-8c3f-9a214cf093ae",
+                    "slaState": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "__replace": "",
+                    "escalated": "\/api\/3\/picklists\/711303d3-75ea-437d-a871-0a8d14fcdb7d",
+                    "slaPercentage": 0
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/incidents",
+                "__recommend": [],
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "74",
+            "left": "312",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "176308ae-7d54-4db7-8060-4a19a640a3fd"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "cb1b8a51-3122-4a48-ae58-0b2e544cf84c",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "45512061-18f5-4961-ac61-27b6acd5ac01"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Create Incident Record",
+            "targetStep": "\/api\/3\/workflow_steps\/176308ae-7d54-4db7-8060-4a19a640a3fd",
+            "sourceStep": "\/api\/3\/workflow_steps\/45512061-18f5-4961-ac61-27b6acd5ac01",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "70bec884-b394-48be-b15e-3d22f8276560"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "64c2c6b5-afe2-4b79-ae25-5711c242d8e8",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

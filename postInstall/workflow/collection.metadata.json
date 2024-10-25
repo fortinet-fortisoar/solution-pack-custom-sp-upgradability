@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "Post-Install Playbooks",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "c9c39cde-f7b6-4b5a-b040-77b6a695894a",
+    "deletedAt": null,
+    "recordTags": []
+}
