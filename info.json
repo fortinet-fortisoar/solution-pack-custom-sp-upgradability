@@ -2,7 +2,7 @@
     "name": "customSolutionPackUpgradability",
     "version": "3.0.0",
     "fsrMinCompatibility": "7.2.0",
-    "entitlements": [],    
+    "entitlements": [145,251,141,143,142],    
     "type": "solutionpack",
     "local": true,
     "label": "Custom Solution Pack Upgradability",
